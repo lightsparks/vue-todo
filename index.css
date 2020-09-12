@@ -1,0 +1,171 @@
+body {
+    background-image: linear-gradient(120deg, #CAD2C5, #84A98C);
+    font-family: 'Shadows Into Light Two', cursive, bold;
+    font-size: 24pt;
+    margin: auto;
+    height: 100vh;
+    width: 70vw;
+}
+
+#fullcontainer {
+    margin: auto;
+    min-width: 75%;
+}
+
+h1 {
+    margin-left: 24px;
+
+}
+
+ul#pending > li > span.done {
+    text-decoration: line-through;
+}
+
+input#newTodo {
+    margin: auto;
+    width: 100%;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid #000000;
+    background: none;
+    padding: 18px;
+    outline: none;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 21pt;
+}
+
+ul#pending > li {
+    display: flex;
+    text-align: left;
+    padding: 12px;
+    padding-left: 18px;
+    margin: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+}
+
+ul#pending > li > span.item {
+    width: 90%;
+}
+
+ul#pending > li.done {
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    transition: 0.1s ease-in-out;
+}
+
+ul#pending > li > input.check {
+    margin: auto;
+}
+
+ul#pending > li > span.remove {
+    font-size: 28pt;
+    justify-content: end;
+    padding: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-shadow: 0px -1px 0px rgba(255, 255, 255, .5); /* 50% white from top */
+}
+
+ul#pending > li > span.remove:hover {
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+input[type=checkbox]:hover {
+    position: relative;
+    cursor: pointer;
+}
+
+span.smiley {
+    margin-left: 25px;
+    -webkit-transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+
+    position: absolute;
+}
+
+.message {
+    margin-left: 5%;
+}
+
+
+
+.listOptions > .clearAll {
+    display: flex;
+    justify-content: center;
+    font-family: 'Shadows Into Light Two';
+    box-shadow: 1px 1px 5px #000000;
+    text-shadow: 1px 1px 5px #000000;
+    background-color: #555555;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    border-radius: 6px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.listOptions > .clearAll:after {
+    content: "";
+    background: #555555;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.listOptions > .clearAll:active:after {
+    transform: translateY(4px);
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}

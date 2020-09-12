@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to the best to-do list EVERRR">
+    <meta name="keywords" content="HTML, CSS, Vue, exercise, to-do, todo, 2do, list">
+    <meta name="author" content="LightSparks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Best todo-list evah :)</title>
+</head>
+
+<body>
+
+<div id="fullcontainer">
+    <!------------------------- TOTAL APP ----------------------------->
+    <div id="app">
+
+
+        <br><h1>{{ title }}</h1><br>
+
+        <form @submit.prevent="addTodo">
+            <input
+                    v-model="newTodo"
+                    type="text"
+                    placeholder="Add task and hit ENTER"
+                    name="newTodo"
+                    id="newTodo"
+                    value=""
+                    maxlength="60"
+                    autofocus/>
+            <!-- button type="submit" name="button">Add new item</button -->
+        </form>
+
+        <!--label for="pending" id="titlePending">To do:</label-->
+        <ul id="pending">
+            <li v-for="todo in todos" :class=" { done: todo.done }">
+                <span :class=" { done: todo.done }" class="item">{{ todo.title }}</span>
+                <input class="check" type="checkbox" v-model="todo.done"/>
+                <span class="remove" @click="removeTodo(todo)" >&#128465;</span>
+            </li>
+        </ul>
+        <!-- show this message when list is empty -->
+        <div v-if="!todos.length" class="message">{{ message }}
+            <span class="smiley">{{ smiley }}</span>
+        </div>
+
+        <!-- show button when list is populated -->
+        <div v-if="todos.length > 0" class="listOptions">
+            <button class="clearAll" @click="clearList">Clear list</button>
+        </div>
+
+        <!-- te doen: scheiden van PENDING naar COMPLETED -->
+
+    </div>
+
+</div>
+
+<!-- SCRIPT REFERENCE -->
+<script src="./vue.js"></script>
+
+</body>
+</html>
