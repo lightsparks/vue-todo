@@ -149,23 +149,3 @@ span.smiley {
     cursor: pointer;
 }
 
-.listOptions > .clearAll:after {
-    content: "";
-    background: #555555;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-}
-
-.listOptions > .clearAll:active:after {
-    transform: translateY(4px);
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
-}
